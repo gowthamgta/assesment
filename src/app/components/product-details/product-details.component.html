@@ -1,0 +1,49 @@
+
+<div class="product-container">
+    <!-- Header -->
+    <div class="product-header">
+      <button class="back-btn" (click)="goBack()">←</button>
+      <span>Product Details</span>
+      <span></span> <!-- Empty span for alignment -->
+    </div>
+  
+    <!-- Product Image -->
+    <div class="product-image-container">
+      <img style="width:140px; height: 120px; object-fit: cover;padding-top: 40px;" [src]="product.image" alt="{{ product.name }}">
+      <div class="favorite-icon">❤️</div>
+    </div>
+  
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2 class="product-title">{{ product.name }}</h2>
+      <p class="price">৳{{ product.price }}</p>
+      <p class="in-stock">In Stock</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+  
+      <!-- Quantity Selector -->
+      <div class="product-quantity">
+        <span>Product Quantity</span>
+        <div class="quantity-buttons">
+          <button class="quantity-btn" (click)="decreaseQuantity()">-</button>
+          <span>{{ quantity }}</span>
+          <button class="quantity-btn" (click)="increaseQuantity()">+</button>
+        </div>
+      </div>
+  
+      <!-- Product Details -->
+      <h3>Product Details</h3>
+      <p class="product-description">
+        {{ product.description }}
+        <span class="read-more">...Read More</span>
+      </p>
+    </div>
+  
+    <!-- Related Products -->
+    <div class="related-products">
+      <h3>Related Product</h3>
+      <div class="related-products-container">
+        <img *ngFor="let item of relatedProducts" [src]="item.image" alt="{{ item.name }}">
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,33 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff; /* Yellow background */
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  mat-icon {
+    font-size: 24px; /* Adjust icon size */
+    color: #666;
+    transition: color 0.3s;
+  }
+  
+  .active {
+    color: #ffcc00; /* Highlight active icon */
+  }
+  

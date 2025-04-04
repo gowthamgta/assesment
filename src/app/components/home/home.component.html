@@ -1,0 +1,54 @@
+<header class="header">
+    <button class="menu-btn" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title">Burger Queen</span>
+    <div class="notification-container">
+      <mat-icon class="bell">notifications</mat-icon>
+      <span class="badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Search for burgers..."  [(ngModel)]="searchQuery" (input)="onSearchChange()" >
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  
+    <!-- Popular Items Section -->
+    <h3>Popular Items</h3>
+    <div class="menu-grid">
+      <div class="menu-item" *ngFor="let item of popularItems">
+        <img [src]="item.image" alt="{{ item.name }}" style="width: 145px; height: 100px; object-fit: cover;">
+        <p>{{ item.name }}</p>
+        <p>৳{{ item.price }}</p>
+        <button class="home-btn" mat-raised-button color="warn" (click)="viewProduct(item)">Add to Cart</button>
+      </div>
+    </div>
+  
+    <!-- Special Offers Section -->
+    <h3>Special Offers</h3>
+    <div class="menu-grid">
+      <div class="menu-item" *ngFor="let item of specialOffers">
+        <img [src]="item.image" alt="{{ item.name }}" style="width: 145px; height: 100px; object-fit: cover;">
+        <p>{{ item.name }}</p>
+        <p>৳{{ item.price }}</p>
+        <button class="home-btn" mat-raised-button color="warn"(click)="viewProduct(item)" >Add to Cart</button>
+      </div>
+    </div>
+
+        <!-- New Arrival Section -->
+        <h3>New Arrival</h3>
+        <div class="menu-grid">
+          <div class="menu-item" *ngFor="let item of newArrivals">
+            <img [src]="item.image" alt="{{ item.name }}" style="width: 145px; height: 100px; object-fit: cover;">
+            <p>{{ item.name }}</p>
+            <p>৳{{ item.price }}</p>
+            <button class="home-btn" mat-raised-button color="warn"(click)="viewProduct(item)" >Add to Cart</button>
+          </div>
+        </div>
+  </div>
+  

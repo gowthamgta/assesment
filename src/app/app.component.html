@@ -1,0 +1,26 @@
+<div class="app-container">
+  <router-outlet></router-outlet>
+  
+  <footer class="footer">
+    <button mat-icon-button matTooltip="Home" (click)="navigateTo('home')">
+      <mat-icon [class.active]="activeTab === 'home'">home</mat-icon>
+    </button>
+  
+    <button mat-icon-button matTooltip="Categories" (click)="navigateTo('categories')">
+      <mat-icon [class.active]="activeTab === 'categories'">grid_view</mat-icon>
+    </button>
+  
+    <button mat-icon-button matTooltip="Discover" (click)="navigateTo('discover')">
+      <mat-icon [class.active]="activeTab === 'discover'">explore</mat-icon>
+    </button>
+  
+    <button mat-icon-button matTooltip="Cart" (click)="navigateTo('cart')">
+      <mat-icon [class.active]="activeTab === 'cart'">shopping_cart</mat-icon>
+    </button>
+  
+    <button mat-icon-button matTooltip="Profile" (click)="navigateTo('profile')">
+      <mat-icon [class.active]="activeTab === 'profile'">person</mat-icon>
+    </button>
+  </footer>
+  
+</div>
